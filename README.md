@@ -38,3 +38,10 @@ which is the matrix form of the following constraint:
 @constraint(model, - sum(mat_a[i, 1] * x[i, 1] for i = 1: 3) - sum((x[i,t] - x[i, t-1]) * mat_a[i, t] 
 	for i = 1: 3, t = 2: 12) == 0)
 ```
+
+***
+
+Edward J. Xu  
+edxu96@outlook.com  
+Version: 1.0  
+Date: April 6th, 2019  
