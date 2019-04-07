@@ -13,17 +13,29 @@ coefficient matrix by sequential calculation.
 ## How it works
 
 ```Julia
-function updateRow(; mat_coeff = 0, add = 0, num_m, num_n, mat_a,
-    vec_i_x, vec_j_x, vec_i_a = vec_i_x, vec_j_a = vec_j_x)
+function updateRow(; mat_coeff = 0, add = false, num_m, num_n, mat_a,
+    vec_i_x, vec_j_x, vec_i_a = vec_i_x, vec_j_a = vec_j_x, inverse = false)
 ```
 
-The conversion of the ordering methods:
+Default double-script order:
+    |     n(j)|
+    |m(i)  *  |
+
+The default single-script order: (To bottom, then right)
 ```Julia
-k = (i - 1) * num_n + j
+k = (j - 1) * m + i
 ```
+To convert back to double-script order:
 ```Julia
-j = k % num_n
-i = Int8((k - j) / num_n)
+i = k % m
+j = Int8((k - i) / m)
+```
+
+The inversed single-script order: (To right, then bottom)
+```Julia
+k = (i - 1) * n + j
+j = k % n
+i = Int8((k - j) / n)
 ```
 
 ## Examples
@@ -50,5 +62,5 @@ which is the matrix form of the following constraint:
 
 Edward J. Xu  
 edxu96@outlook.com  
-Version: 1.0  
-Date: April 6th, 2019  
+Version: 2.0  
+Date: April 7th, 2019  
