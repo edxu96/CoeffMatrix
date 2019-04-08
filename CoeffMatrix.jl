@@ -55,13 +55,13 @@ function updateRow(; mat_coeff = 0, add = false, m, n, mat_para,
     for p = 1: length(vec_i_x)
         for q = 1: length(vec_j_x)
             i = vec_i_x[p]
-            j = vec_i_x[q]
+            j = vec_j_x[q]
             if inverse  # inverse single-script order
                 k = (i - 1) * n + j  # To right, then bottom
-                vecRow_coeff_new[i - 1) * n + vec_j_x[j]] = mat_para_cal[vec_i_a[p], vec_j_a[q]]
+                vecRow_coeff_new[(i - 1) * n + vec_j_x[j]] = mat_para_cal[vec_i_a[p], vec_j_a[q]]
             else  # default single-script order
                 k = (j - 1) * m + i  # To bottom, then right
-                vecRow_coeff_new[(vec_j_x[j] - 1) * m + vec_i_x[i]] = mat_para_cal[vec_i_a[p], vec_j_a[q]]
+                vecRow_coeff_new[k] = mat_para_cal[vec_i_a[p], vec_j_a[q]]
             end
         end
     end
