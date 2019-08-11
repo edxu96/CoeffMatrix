@@ -1,10 +1,9 @@
 # CoeffMatrix
 Julia Module to Extract the Coefficient Matrix in Standard LP or MILP Problem
 
-To use the algorithm, like [BendersOptim](https://github.com/edxu96/BendersOptim) for better solving MILP or stochastic
-programming, you have to convert the problem into standard form. The way to find the coefficient matrix for continuous
-variables and integer variables is trivial and easy to make a mistake. This module can help you to generate the
-coefficient matrix by sequential calculation.   
+This repo has been archived On Aug 11, 2019. New update will be made to [edxu96/MatrixOptim](https://github.com/edxu96/MatrixOptim), which is the aggregation of robust optimization and decomposition.
+
+To use the algorithms like Benders Decomposition in [edxu96/MatrixOptim](https://github.com/edxu96/MatrixOptim) for better solving MILP or stochastic programming, you have to convert the problem into standard form. The way to find the coefficient matrix for continuous variables and integer variables is trivial and easy to make a mistake. This module can help you to generate the coefficient matrix by sequential calculation.   
 
 ## Algorithm Description
 
